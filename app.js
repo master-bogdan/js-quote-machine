@@ -1,11 +1,15 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    let res = fetch("https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/", {
+    const btnLang = document.querySelector('.button-group');
+    const btnGet = document.querySelector('#get');
+
+    function getQuote() {
+        let res = fetch("https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/", {
         // "mode": "no-cors",
         "headers": {
             "Content-type": "application/x-www-form-urlencoded"
         },
-        "body": "method=getQuote&format=json&key=&lang=en",
+        "body": `method=getQuote&format=json&key=&lang=ru`,
         "method": "POST"
         })
         .then(response => response.json())
@@ -18,6 +22,17 @@ window.addEventListener('DOMContentLoaded', () => {
             `);
         })
         .catch(error => console.log('Fail', error));
+    }
 
-// console.log(res);
+    function setLang(event) {
+        if (event.target.classList.contains('btn')) {
+            let data = event.target.getAttribute('data-lang');
+            console.log(data);
+            return data;
+        }
+        
+    }
+
+    btnLang.addEventListener('click', setLang);
+    btnGet.addEventListener('click', getQuote);
 });
