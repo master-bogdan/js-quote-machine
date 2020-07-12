@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const btnLang = document.querySelector('.button-group');
     const btnGet = document.querySelector('#get');
+    let language = 'ru';
 
     function getQuote() {
         let res = fetch("https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/", {
@@ -9,17 +10,17 @@ window.addEventListener('DOMContentLoaded', () => {
         "headers": {
             "Content-type": "application/x-www-form-urlencoded"
         },
-        "body": `method=getQuote&format=json&key=&lang=ru`,
+        "body": `method=getQuote&format=json&key=&lang=${language}`,
         "method": "POST"
         })
         .then(response => response.json())
         .then(data => {
             const out = document.querySelector('#out');
-            out.insertAdjacentHTML('afterbegin', `
+            out.innerHTML = `
                 <h1 class="display-4">"${data.quoteText}"</h1>
-                <p class="lead">${data.quoteAuthor}</p>
                 <hr class="my-4">
-            `);
+                <p class="lead">${data.quoteAuthor}</p>
+            `;
         })
         .catch(error => console.log('Fail', error));
     }
@@ -27,9 +28,9 @@ window.addEventListener('DOMContentLoaded', () => {
     function setLang(event) {
         if (event.target.classList.contains('btn')) {
             let data = event.target.getAttribute('data-lang');
-            console.log(data);
-            return data;
+            language = data;
         }
+        language === 'ru'? btnGet.textContent = 'Получить случайную цитату' : btnGet.textContent = 'Get quote';
         
     }
 
