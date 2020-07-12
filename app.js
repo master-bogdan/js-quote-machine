@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             const out = document.querySelector('#out');
             out.innerHTML = `
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <div class="card-body">
                         <p class="card-text">${data.quoteText}</p>
                         <h6 class="card-subtitle mb-2 text-muted">${data.quoteAuthor}</h6>
