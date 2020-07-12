@@ -8,15 +8,19 @@
     <title>JS Quote Machine</title>
 </head>
 <body>
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v7.0" nonce="U89rJ3Ez"></script>
     <div id="main">
         <div class="container">
             <div class="jumbotron">
                 <div class="button-group">
+                    <div>Выберите свой язык || Choose your language</div>
                     <button class="btn btn-primary" data-lang="ru">ru</button>
                     <button class="btn btn-primary" data-lang="en">en</button>
                 </div>
                 <button id="get" class="btn btn-primary">Get quote</button>
                 <div id="out"></div>
+                <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Поделиться</a></div>
             </div>
         </div>
     </div>
