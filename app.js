@@ -5,20 +5,19 @@ window.addEventListener('DOMContentLoaded', () => {
         "headers": {
             "Content-type": "application/x-www-form-urlencoded"
         },
-        "body": "method=getQuote&format=json&key=&lang=ru",
+        "body": "method=getQuote&format=json&key=&lang=en",
         "method": "POST"
         })
         .then(response => response.json())
         .then(data => {
             const out = document.querySelector('#out');
             out.insertAdjacentHTML('afterbegin', `
-            <div class="jumbotron">
-                <h1 class="display-4">${data.quoteAuthor}</h1>
-                <p class="lead">${data.quoteText}</p>
+                <h1 class="display-4">"${data.quoteText}"</h1>
+                <p class="lead">${data.quoteAuthor}</p>
                 <hr class="my-4">
-            </div>
             `);
         })
         .catch(error => console.log('Fail', error));
 
+// console.log(res);
 });
