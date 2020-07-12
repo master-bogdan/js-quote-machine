@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const btnLang = document.querySelector('.button-group');
     const btnGet = document.querySelector('#get');
+    let colors = [];
     let language = 'ru';
 
     function getQuote() {
@@ -17,9 +18,14 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             const out = document.querySelector('#out');
             out.innerHTML = `
-                <h1 class="display-4">"${data.quoteText}"</h1>
-                <hr class="my-4">
-                <p class="lead">${data.quoteAuthor}</p>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <p class="card-text">${data.quoteText}</p>
+                        <h6 class="card-subtitle mb-2 text-muted">${data.quoteAuthor}</h6>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
             `;
         })
         .catch(error => console.log('Fail', error));
@@ -36,4 +42,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
     btnLang.addEventListener('click', setLang);
     btnGet.addEventListener('click', getQuote);
+    getQuote();
 });
