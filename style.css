@@ -1,3 +1,4 @@
+
 .heading {
     color: white;
     text-align: center;
@@ -52,4 +53,20 @@
 
 #author {
     text-align: right;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fb-share-button, .twitter-share-button {
+    width: fit-content;
+    padding: 2px 10px 2px 10px;
+    border-radius: 10px;
+}
+
+.fb-share-button a{
+    color: white;
 }

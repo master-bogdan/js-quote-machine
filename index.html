@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b120e777af.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>JS Quote Machine</title>
 </head>
 <body>
     <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v7.0" nonce="U89rJ3Ez"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v7.0&appId=624900991303837&autoLogAppEvents=1" nonce="nyIOF17R"></script>
+
 
     <div class="app">
         <header class="navbar navbar-dark bg-dark">
@@ -24,7 +26,8 @@
         <div id="main">
             <div class="container">
                 <div class="jumbotron">
-                    <div id="out"></div>
+                    <div id="out">
+                    </div>
                     <button id="get" class="btn btn-primary">Получить случайную цитату</button>
                 </div>
                 <div>Coded by <a href="https://github.com/master-bogdan">Bogdan Shchavinskyi</a></div>
@@ -32,6 +35,7 @@
         </div>
     </div>
 
+    
     <script src="app.js"></script>
 </body>
 </html>
