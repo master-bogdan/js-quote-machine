@@ -10,20 +10,28 @@
 <body>
     <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v7.0" nonce="U89rJ3Ez"></script>
-    <div id="main">
-        <div class="container">
-            <div class="jumbotron">
-                <div class="button-group">
-                    <div>Выберите свой язык || Choose your language</div>
-                    <button class="btn btn-primary" data-lang="ru">ru</button>
-                    <button class="btn btn-primary" data-lang="en">en</button>
+
+    <div class="app">
+        <header class="navbar navbar-dark bg-dark">
+            <h1 class="heading">Сайт случайной цитаты</h1>
+            <div class="button-group">
+                <div class="btn-heading">Выберите свой язык || Choose your language =></div>
+                <button class="btn btn-primary" data-lang="ru">russian</button>
+                <button class="btn btn-primary" data-lang="en">english</button>
+            </div>
+        </header>
+
+        <div id="main">
+            <div class="container">
+                <div class="jumbotron">
+                    <div id="out"></div>
+                    <button id="get" class="btn btn-primary">Получить случайную цитату</button>
                 </div>
-                <button id="get" class="btn btn-primary">Get quote</button>
-                <div id="out"></div>
+                <div>Coded by <a href="https://github.com/master-bogdan">Bogdan Shchavinskyi</a></div>
             </div>
         </div>
     </div>
-    
+
     <script src="app.js"></script>
 </body>
 </html>

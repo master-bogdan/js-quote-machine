@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
 
+    const heading = document.querySelector('.heading');
     const btnLang = document.querySelector('.button-group');
     const btnGet = document.querySelector('#get');
     let colors = [];
@@ -21,9 +22,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 <div class="card">
                     <div class="card-body">
                         <p class="card-text">${data.quoteText}</p>
-                        <h6 class="card-subtitle mb-2 text-muted">${data.quoteAuthor}</h6>
+                        <h6 id="author" class="card-subtitle mb-2 text-muted">${data.quoteAuthor}</h6>
                         <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <a class="twitter-share-button"
+                            href="https://twitter.com/intent/tweet?text=${data.quoteText}">
+                        Tweet</a>
                     </div>
                 </div>
             `;
@@ -36,11 +39,16 @@ window.addEventListener('DOMContentLoaded', () => {
             let data = event.target.getAttribute('data-lang');
             language = data;
         }
-        language === 'ru'? btnGet.textContent = 'Получить случайную цитату' : btnGet.textContent = 'Get quote';
-        
+        if (language === 'ru') {
+            heading.textContent = 'Сайт случайной цитаты';
+            btnGet.textContent = 'Получить случайную цитату';
+        } 
+        else { 
+            heading.textContent = 'Random quote site';
+            btnGet.textContent = 'Get quote';
+        }
     }
 
     btnLang.addEventListener('click', setLang);
     btnGet.addEventListener('click', getQuote);
-    getQuote();
 });
