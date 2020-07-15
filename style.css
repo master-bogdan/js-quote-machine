@@ -21,7 +21,7 @@
 
 #main {
     width: 100%;
-    height: 80vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,6 +38,7 @@
     -webkit-box-shadow: 0px 0px 15px 12px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 15px 12px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 15px 12px rgba(0,0,0,0.75);
+    margin-top: 50px;
 }
 
 .btn-heading {
@@ -57,6 +58,7 @@
 
 #author {
     text-align: right;
+    font-size: large;
 }
 
 .social-container {
@@ -68,7 +70,30 @@
 }
 
 .btn-fb , .twitter-share-button {
+    display: inline-block;
     width: fit-content;
     padding: 4px 10px;
     border-radius: 10px;
+}
+
+@media only screen and (max-width: 504px) {
+    .social-container {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        /* font-size: x-small; */
+    }
+    /* .twitter-share-button {
+        margin-top: 20px;
+    } */
+}
+
+@media only screen and (max-width: 350px) {
+    .social-container {
+        font-size: small;
+    }
+    .button-group {
+        text-align: center;
+    }
 }
