@@ -24,12 +24,12 @@ window.addEventListener('DOMContentLoaded', () => {
                         <p class="card-text">${data.quoteText}</p>
                         <h6 id="author" class="card-subtitle mb-2 text-muted">${data.quoteAuthor}</h6>
                         <div class="social-container">
-                            <div class="fb-share-button btn-primary" 
+                            <div class="fb-share-button" 
                                 data-href="https://master-bogdan.github.io/js-quote-machine/" 
                                 data-layout="button" 
                                 data-size="large">
                                     <a target="_blank" 
-                                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmaster-bogdan.github.io%2Fjs-quote-machine%2F&amp;src=sdkpreparse&amp;quote=${data.quoteText} (c) ${data.quoteAuthor}" class="fb-xfbml-parse-ignore">
+                                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmaster-bogdan.github.io%2Fjs-quote-machine%2F&amp;src=sdkpreparse&amp;quote=${data.quoteText} (c) ${data.quoteAuthor}" class="fb-xfbml-parse-ignore btn-primary btn-fb">
                                     <i class="fab fa-facebook"></i> Поделиться
                                     </a>
                             </div>
@@ -47,7 +47,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         })
-        .catch(error => console.log('Fail', error));
+        .catch(error => {
+            console.log('Fail', error);
+            const out = document.querySelector('#out');
+            out.innerHTML = `Something wrong :-(`;
+        });
     }
 
     function setLang(event) {
