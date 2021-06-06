@@ -6,10 +6,10 @@ This random quote app with social share function - [[DEMO](https://master-bogdan
 ### Technologies used
 - HTML5
 - CSS3
+- JS
 - Bootstrap
 - Fetch
 - Forismatic API
-- JS
-- ES6
+- ES6, Async / Await
 
 In this app I make bilanguage function (RUS or ENG), social share buttons (facebook, twitter)
